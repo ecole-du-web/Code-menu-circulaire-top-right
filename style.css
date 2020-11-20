@@ -1,0 +1,153 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    overflow-x: hidden;
+    background: #333;
+    height: 100vh;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 200px;
+    padding-top: 125px;
+}
+h1 + p {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 35px;
+    position: relative;
+    top: -35px;
+}
+
+.container-corner {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+.btn-circle {
+    background: rgb(78,76,221);
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 15;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #fff;
+}
+
+.line {
+    width: 50%;
+    height: 3px;
+    background: #fff;
+    transition: 
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    top 0.2s ease 0.2s;
+    position: relative;
+}
+.line:nth-child(1){
+    top: -10px;
+}
+.line:nth-child(3){
+    top: 10px;
+}
+
+.btn-circle.menu-anim .line:nth-child(1){
+    top: 3px;
+    transform: rotate(45deg);
+    transition: 
+    top 0.2s ease,
+    transform 0.2s ease 0.2s;
+}
+
+.btn-circle.menu-anim .line:nth-child(2){
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.btn-circle.menu-anim .line:nth-child(3){
+    top: -3px;
+    transform: rotate(-45deg);
+    transition: 
+    top 0.2s ease,
+    transform 0.2s ease 0.2s;
+}
+
+.circle-menu {
+    background: #db5656;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 90px solid rgba(255,255,255,0.239);
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease 0.5s;
+}
+
+.circle-menu.circle-anim {
+    transition: transform 0.4s ease 0.4s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.links-circle {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-circle img {
+    width: 90px;
+    transition: transform 0.2s ease;
+}
+
+.links-circle img:hover {
+    transform: scale(1.2);
+}
+
+.links-circle:nth-child(1){
+    left: 0%;
+    transition: transform 0.2s ease 0.4s;
+}
+.links-circle:nth-child(2){
+    left: 15%;
+    top: 85%;
+    transition: transform 0.2s ease 0.2s;
+}
+.links-circle:nth-child(3){
+    top: 100%;
+    transition: transform 0.2s ease;
+}
+
+.circle-menu.circle-anim .links-circle:nth-child(1){
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease 0.7s;
+}
+.circle-menu.circle-anim .links-circle:nth-child(2){
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease 0.9s;
+}
+.circle-menu.circle-anim .links-circle:nth-child(3){
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease 1.1s;
+}
